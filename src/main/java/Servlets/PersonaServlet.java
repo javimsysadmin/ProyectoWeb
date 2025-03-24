@@ -1,8 +1,6 @@
 package Servlets;
-
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import Model.persona;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,11 +15,12 @@ public class PersonaServlet extends HttpServlet {
 
         // Obtener parámetros de la URL
         String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
         int edad = Integer.parseInt(request.getParameter("edad"));
 
 
         // Crear objeto Persona
-        persona persona = new persona(nombre, edad);
+        persona persona = new persona(nombre, edad, apellido);
 
         // Respuesta HTML
         response.setContentType("text/html");
@@ -29,6 +28,7 @@ public class PersonaServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("<h2>Datos de la Persona</h2>");
         out.println("<p>Nombre: " + persona.getNombre() + "</p>");
+        out.println("<p>Apellido: " + persona.getApellido() + "</p>");
         out.println("<p>Edad: " + persona.getEdad() + "</p>");
         out.println("</body></html>");
     }

@@ -1,11 +1,21 @@
 package Model;
 public class persona {
     private String nombre;
+    private String apellido;
     private int edad;
 
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
     // Constructor
-    public persona(String nombre, int edad) {
+    public persona(String nombre, int edad, String apellido) {
         this.nombre = nombre;
+        this.apellido = nombre;
         this.edad = edad;
     }
 
